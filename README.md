@@ -4,7 +4,13 @@
 
 A Frogger Arcade Game built with Vanilla JavaScript without any external libraries. The idea of this game is to try and reach  the Water without trying to  touch a Bug! or you loose lives
 
-<img src="images/memory-game-screenshot.png" width="290px" height="350px" />
+Players:
+
+<img src="images/images/char-boy.png"  />
+<img src="images/char-horn-girl.png"  />
+<img src="images/char-cat-girl.png"  />
+<img src="images/char-pink-girl.png" />
+<img src="images/char-princess-girl.png"  />
 
 ### Rules
 The game board consists of sixteen cards which are randomly arranged with the cards faced down everytime the player starts or restarts the game or even reloads the page. Each row and column is made up four cards each. The game board  is made up of eight different pairs of cards (making it 16cards all together). 
