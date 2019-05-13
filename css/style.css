@@ -1,0 +1,88 @@
+body {
+    text-align: center;
+    background-color:#1c1d3a
+}
+
+canvas{
+    padding:0;
+}
+
+#level{
+  color: #c63e0b;
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+#level1{
+  color: #c63e0b;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+#popUpAlert{
+  display: none; 
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 39%; 
+  overflow: auto; 
+  background-color: transparent
+}
+
+/* Modal Content/Box */
+.popContent{
+  background-color: #030e01;
+  margin: 2% auto; 
+  padding: 20px;
+  border: 1px solid #030e01;
+  width: 70%; 
+}
+
+.close {
+  color: #ffffff;;
+  float: right;
+  font-size: 37px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+#play-again{
+  color: black;
+  padding-left: 17px;
+  padding-right: 17px;
+  font-size: 1em;
+  border-color: white;
+}
+
+#GameOver{
+  color:#ffffff
+}
+
+#heart-image{
+  width: 28px;
+  height: 28px;
+}
+
+#lives-lost{
+  width: 28px;
+  height: 28px;
+  color: #d0c6bb;
+  padding-right: 33px;
+}
+
+#score{
+  color: #d0c6bb;
+}
+
+#winning{
+  color: grey
+}
