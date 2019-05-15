@@ -5,9 +5,7 @@ let score = 0
 
 let playAgainButton = document.getElementById('play-again')
 
-// console.log(playAgainButton)
-
-
+// generates random numbers between the mininum and maximum number to use for the spped
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -16,10 +14,9 @@ function getRandomInt(min, max) {
 var Enemy = function(x, y) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
-    this.x = x;
-    this.y = y;
+    this.x = x; //position of the enemy in the x axis
+    this.y = y; //position of the enemy in the y axis
     this.speed = getRandomInt(100, 50);
-
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -32,7 +29,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt
-
+    // Increases the enemy speed based on what level the player is on
     if(this.x > 550){
         this.x = -200;
     }
@@ -69,14 +66,9 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 var Player =function(x, y, playerImage){
     this.playerImage = playerImage
-    this.x = x
-    this.y = y
-    this.width = 55
-    this.height = 55
+    this.x = x //position of the player in the x axis
+    this.y = y //position of the player in the y axis
 }
-
-
-
 
 Player.prototype.update=function(){
     return this.y
@@ -123,16 +115,24 @@ Player.prototype.handleInput=function(keyPressed){
     }
 
 }
-
+/* this function put the player to the begining position
+* when it colides with an enemy
+*/
 Player.prototype.reset = function(){
     this.x=200
     this.y=400
 }
+/* this function put the player to the begining position
+* before it started the game
+*/
 Player.prototype.startAgain = function (){
     this.x=390
     this.y=420
 }
 
+/* this function handles when the enemy and player colide
+* so it reset the game when the player coliides with an enemy
+*/
 function checkCollisions(enemies, player){
     enemies.forEach(function(enemy){
         if(enemy.x < player.x + 45 && enemy.x + 45 > player.x  &&
@@ -145,9 +145,10 @@ function checkCollisions(enemies, player){
 
 }
 
-// let player = new Player(200, 420)
-let player = new Player(200, 420, 'images/char-boy.png')
+//player initialiazation
+let player = new Player(390, 420, 'images/char-boy.png')
 
+//Array of players images
 let charPlayer = [
     'images/char-boy.png',
     'images/char-horn-girl.png',
@@ -158,8 +159,7 @@ let charPlayer = [
 let min = 0
 let max = 1
 
-// let charPlayerCurrent = []
-
+// handles the change of characters
 Player.prototype.upDatePlayers = function (){
     if(min <= 4 && max <=5 ){
         let  charPlayerCurrent = charPlayer.slice(min, max)
@@ -197,7 +197,8 @@ function dismissPopUp () {
 allEnemies.forEach(enemy=>{
         enemy.speed = getRandomInt(100, 50)
 })
-//Play again button restarts the game and removes the modal
+
+// Play again button restarts the game and removes the modal
 level = 0
 score = 0
 document.getElementById('level1').innerHTML = `Level ${level}`
@@ -212,6 +213,7 @@ allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5]
 
 closeIcon.addEventListener('click', dismissPopUp)
 
+// Handle the alert when the player wins the game
 function popUp () {
 
     document.getElementById('popUpAlert').style.display = 'block'
