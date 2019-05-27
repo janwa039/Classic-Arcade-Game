@@ -45,11 +45,11 @@ Enemy.prototype.update = function(dt) {
         }
         else if ( level === 2){
 
-            this.x += 2.5 * this.speed * dt;
+            this.x += 2.6 * this.speed * dt;
         }
         else{
 
-            this.x += 2.9 * this.speed * dt;
+            this.x += 3 * this.speed * dt;
         }
     }
  
@@ -98,8 +98,10 @@ Player.prototype.handleInput=function(keyPressed){
 
         break
         case 'up':
-        if(this.y > 0){
-            this.y = this.y - 38
+        if(this.y > 25){
+            
+            this.y = this.y - 40
+            console.log(this.y)
         }
         else{
             level = level + 1
@@ -234,11 +236,16 @@ function gameReset(){
 
     }else if(level === 2 ){
         var enemy9 = new Enemy(-700,210)
+        var enemy12 = new Enemy(-200,180)
         allEnemies.push(enemy9)
+        allEnemies.push(enemy12)
 
     }else if(level === 3){
-        var enemy10 = new Enemy(0,220)
+        var enemy10 = new Enemy(-520,60)
+        var enemy11 = new Enemy(-700,180)
+  
         allEnemies.push(enemy10)
+        allEnemies.push(enemy11)
 
     }else if(level === 4){
         popUp()
