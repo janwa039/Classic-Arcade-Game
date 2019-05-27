@@ -101,7 +101,6 @@ Player.prototype.handleInput=function(keyPressed){
         if(this.y > 25){
             
             this.y = this.y - 40
-            console.log(this.y)
         }
         else{
             level = level + 1
