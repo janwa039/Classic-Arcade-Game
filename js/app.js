@@ -80,7 +80,6 @@ Player.prototype.render =function(){
 }
 
 Player.prototype.handleInput=function(keyPressed){
-    // console.log('here')
 
     //board is 0 to 505 from left and 0 to 606 from up down
     switch(keyPressed){
